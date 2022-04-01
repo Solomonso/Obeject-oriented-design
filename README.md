@@ -2,4 +2,4 @@
 
 ### Background information
 
-This project contains the refactored JabberPoint source code with the UML diagrams.
+This project contains the initial source code of JabberPoint, without no refactoring.

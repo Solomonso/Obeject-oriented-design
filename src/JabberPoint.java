@@ -1,12 +1,5 @@
-package main;
+import javax.swing.JOptionPane;
 
-import accessor.Accessor;
-import presentation.Presentation;
-import slide.SlideViewerFrame;
-import style.StyleHelperClass;
-import xml.XMLAccessor;
-
-import javax.swing.*;
 import java.io.IOException;
 
 /** JabberPoint Main Program
@@ -30,11 +23,10 @@ public class JabberPoint {
 
 	/** The main program */
 	public static void main(String[] argv) {
-
-		StyleHelperClass.createStyles();
+		
+		Style.createStyles();
 		Presentation presentation = new Presentation();
-
-		new SlideViewerFrame(JABVERSION,  presentation);
+		new SlideViewerFrame(JABVERSION, presentation);
 		try {
 			if (argv.length == 0) { //a demo presentation
 				Accessor.getDemoAccessor().loadFile(presentation, "");

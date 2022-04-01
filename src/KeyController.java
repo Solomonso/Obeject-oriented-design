@@ -1,9 +1,5 @@
-package controller;
-
-import presentation.PresentationFrame;
-
-import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyAdapter;
 
 /** <p>This is the KeyController (KeyListener)</p>
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
@@ -16,9 +12,10 @@ import java.awt.event.KeyEvent;
 */
 
 public class KeyController extends KeyAdapter {
-	private PresentationFrame presentationFrame;
-	public KeyController(PresentationFrame presentationFrame) {
-		this.presentationFrame = presentationFrame;
+	private Presentation presentation; //Commands are given to the presentation
+
+	public KeyController(Presentation p) {
+		presentation = p;
 	}
 
 	public void keyPressed(KeyEvent keyEvent) {
@@ -27,12 +24,12 @@ public class KeyController extends KeyAdapter {
 			case KeyEvent.VK_DOWN:
 			case KeyEvent.VK_ENTER:
 			case '+':
-				presentationFrame.presentation.nextSlide();
+				presentation.nextSlide();
 				break;
 			case KeyEvent.VK_PAGE_UP:
 			case KeyEvent.VK_UP:
 			case '-':
-				presentationFrame.presentation.prevSlide();
+				presentation.prevSlide();
 				break;
 			case 'q':
 			case 'Q':
